@@ -1,4 +1,4 @@
-package com.broochem.restserver;
+package com.broochem.restserver.rest;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.FormParam;
