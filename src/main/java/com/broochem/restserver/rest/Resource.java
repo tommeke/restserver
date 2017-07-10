@@ -38,18 +38,22 @@ public class Resource {
 	}
 	
 	@GET
+	@Path("{id}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public String pathMethod(@PathParam("id") long modelId) {
+		return ModelProviderFactory.getInstance().createModelProvider().getModel(modelId);
+	}
+	
+	/*
+	
+	@GET
 	@Path("param")
 	@Produces(MediaType.TEXT_PLAIN)
 	public String paramMethod(@QueryParam("name") String name) {
 	  return "Hello, " + name;
 	}
 
-	@GET
-	@Path("path/{var}")
-	@Produces(MediaType.TEXT_PLAIN)
-	public String pathMethod(@PathParam("var") String name) {
-	    return "Hello, " + name;
-	}
+	 */
 	
 	@POST
 	@Path("post")
