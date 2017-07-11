@@ -5,10 +5,12 @@ import java.util.Properties;
 import org.eclipse.jetty.server.Handler;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.handler.ContextHandler;
+import org.eclipse.jetty.server.handler.DefaultHandler;
 import org.eclipse.jetty.server.handler.HandlerList;
 import org.eclipse.jetty.server.handler.ResourceHandler;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
+import org.eclipse.jetty.util.component.LifeCycle;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.servlet.ServletContainer;
 
@@ -46,8 +48,8 @@ public class App {
 
 		HandlerList handlers = new HandlerList();
 		handlers.setHandlers( new Handler[] {
-				restContext,
-				staticContextHandler
+				staticContextHandler,
+				restContext
 		});
 		
 		server.setHandler( handlers);
