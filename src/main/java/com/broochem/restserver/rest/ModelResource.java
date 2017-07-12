@@ -17,7 +17,7 @@ import org.apache.commons.lang3.tuple.Pair;
 import com.broochem.restserver.database.ModelProviderFactory;
 
 @Path("model")
-public class Resource {
+public class ModelResource {
 	@GET
 	@Path("list")
 	@Produces(MediaType.APPLICATION_JSON)

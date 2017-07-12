@@ -28,7 +28,7 @@ The custom docky dock js code talking to the REST server
       }]
   };
 
-  var myLayout = new GoldenLayout( config );
+  var myLayout = new GoldenLayout( config, document.getElementById("main-content"));
 
   myLayout.registerComponent( 'testComponent', function( container, componentState ){
       container.getElement().html( '<h2>' + componentState.label + '</h2>' );
